@@ -20,38 +20,35 @@
    - Advantages:
      1. Automatic resource management: No need for explicit closing, which makes the code cleaner and prevents resource leaks.
      2. Simplifies exception handling: The automatic closing of resources works even if exceptions are thrown within the try block.
+     - custom implementation : [CustomResourceExample.java](CustomResourceExample.java)
+     - Resources Must Implement AutoCloseable or Closeable
+     - Resources are Closed in Reverse Order
+     - Exception Suppression
+           `try (MyResource resource = new MyResource()) {
+              throw new Exception("Primary exception");
+           } catch (Exception e) {
+              System.out.println("Caught: " + e.getMessage());
+              for (Throwable t : e.getSuppressed()) {
+                  System.out.println("Suppressed: " + t.getMessage());
+              }
+           }`
+     - No null Resources
+     - Cannot Reassign Resources
 
-2. catch with Multiple Exceptions
-In Java 7, the ability to catch multiple exceptions in a single catch block was introduced. This feature is useful when multiple exceptions are handled in the same way. It helps reduce code duplication.
-
-How it works:
-Multiple exceptions can be caught using a single catch block by separating the exception types with the | (pipe) symbol.
-The exceptions should not have a parent-child relationship, i.e., you can't catch IOException and FileNotFoundException together because FileNotFoundException is a subclass of IOException.
-Syntax:
-java
-Copy code
-try {
-// Code that may throw exceptions
-} catch (IOException | SQLException e) {
-// Handle both IOException and SQLException
-e.printStackTrace();
-}
-In this example, both IOException and SQLException are handled by the same catch block.
-
-Key points:
-The variable e in the catch block is implicitly final, meaning you can't reassign it within the block.
-This feature reduces code duplication when multiple exceptions have the same handling logic.
-Combining Both Concepts
-Here’s an example combining try-with-resources and catching multiple exceptions:
-
-java
-Copy code
-try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
-System.out.println(br.readLine());
-} catch (FileNotFoundException | IOException e) {
-e.printStackTrace();
-}
-In this code:
-
-The BufferedReader is automatically closed when the block is done.
-Both FileNotFoundException and IOException are handled in the same catch block.
+2. **catch with Multiple Exceptions**
+   - In Java 7, the ability to catch multiple exceptions in a single catch block was introduced. 
+   - This feature is useful when multiple exceptions are handled in the same way. It helps reduce code duplication.
+   - How it works: 
+        - Multiple exceptions can be caught using a single catch block by separating the exception types with the | (pipe) symbol.
+        - The exceptions should not have a parent-child relationship,
+          i.e., you can't catch IOException and FileNotFoundException together because FileNotFoundException is a subclass of IOException.
+        -  `try {
+              // Code that may throw exceptions
+           } catch (IOException | SQLException e) {
+              // Handle both IOException and SQLException
+              e.printStackTrace();
+           }`
+   - In this example, both IOException and SQLException are handled by the same catch block.
+   - Key points:
+     1. The variable e in the catch block is implicitly final, meaning you can't reassign it within the block. 
+     2. This feature reduces code duplication when multiple exceptions have the same handling logic.

@@ -7,7 +7,7 @@
 6. Collection :
    - [Collections :.md](Collections%20%3A.md)
 7. Program :
-   - [GEEKSFORGEEKS.md](GEEKSFORGEEKS.md)
+   - [GEEKSFORGEEKS](GEEKSFORGEEKS)
 8. Solid Principle 
    - [Solid Priniciple And OOPS.md](Solid%20Priniciple%20And%20OOPS.md)
 9. Spring boot : 
