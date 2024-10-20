@@ -20,4 +20,39 @@
 - Repository [TicketDao.java](../../java/com/sdc/dao/TicketDao.java)
 
 - How to configure 2 different database or same database with different ip?
+- [FirstDataSourceConfig.java](../program/FirstDataSourceConfig.java)
+- [SecondDataSourceConfig.java](../program/SecondDataSourceConfig.java)
+  - [appliacation2datasource.yml](../program/appliacation2datasource.yml)
+
+        @Configuration
+        @EnableJpaRepositories(
+            basePackages = "com.example.repository.postgresql", // Change to your PostgreSQL repository package
+            entityManagerFactoryRef = "postgresqlEntityManagerFactory",
+            transactionManagerRef = "postgresqlTransactionManager"
+        )
+    
+         @Bean(name = "postgresqlDataSource")
+        @ConfigurationProperties(prefix = "spring.datasource.postgresql")
+        public DataSource postgresqlDataSource() {
+            return DataSourceBuilder.create().build();
+        }
+
+        @Bean(name = "postgresqlEntityManagerFactory")
+        public LocalContainerEntityManagerFactoryBean postgresqlEntityManagerFactory(
+        EntityManagerFactoryBuilder builder,
+        @Qualifier("postgresqlDataSource") DataSource dataSource) {
+        return builder
+            .dataSource(dataSource)
+            .packages("com.example.model.postgresql") // Change to your PostgreSQL model package
+            .persistenceUnit("postgresql")
+            .build();
+        }
+
+        @Bean(name = "postgresqlTransactionManager")
+        public DataSourceTransactionManager postgresqlTransactionManager(
+        @Qualifier("postgresqlDataSource") DataSource dataSource) {
+            return new DataSourceTransactionManager(dataSource);
+        }
+
+      
   

@@ -1,4 +1,4 @@
-Solid Priniciple And OOPS: 
+- Solid Priniciple And OOPS: 
     In Java, SOLID principles are an object-oriented approach that are applied to software structure design. It is conceptualized by Robert C. Martin (also known as Uncle Bob). 
     1. SOLID Priniciple.
         1. Single responsibility Priniciple(SRP)

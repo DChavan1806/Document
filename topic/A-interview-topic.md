@@ -2,12 +2,12 @@
    - My name is Dnyaneshwar Chavan , I am from Nashik, Maharastra 
    - I have over 7 year exprience in software development, mainly worked on backed technology 
      like java, spring and spring boot framwork, hiberante and database mysql and elastic search
-   - I started my carrer with manhattan associate as java developer and worked on the legacy project warehouse mangement. help client to implement there 3pl setup for fedex, nile, dhl.
+   - I started my carrer with manhattan associate as java developer and worked on the legacy project warehouse mangement. help client to implement there 3pl setup for FedEx, nile, dhl.
    - covert same minolothic wm project to microservice using spring boot, kakfa as messageing broked and restfull service, use ELK for log monitoring 
    - join blume on feb 2022, startup compony,  worked on the logistic module and elastic sync service.
 
 2. About Previous Project
-   - mbe(master business entity) - libarary or jar 
+   - mbe(master business entity) - library or jar 
    - logistic to handle planning and tracking of container movement
    - elastic search to handle searching and list pages 
 
@@ -20,7 +20,10 @@
    - https://github.com/DChavan1806/com.rest.api
 
 
-5. What is the use of default keyword and how we can us that in real time. Why cant we use Abstract class instead of interface with default method.
+One coding problem on DSA 2. One coding problem which was needed to be done using java 8 System design and technical questions: 1. How db is distributed in microservice 2. Caching and logging 3. Retry mechanism in spring boot 4. Scaling in Microservice, which scenario which scaling is required. 5. Api gateway, circuit breaker 6. Data processing in kafka, consumer and producer
+
+
+5. What is the use of default keyword and how we can use that in real time. Why cant we use Abstract class instead of interface with default method.
 6. OOPS
 7. What is Abstraction and real time example
 8. How to implement singleton class in java
@@ -47,7 +50,7 @@
 23)  Difference between HashMap and ConcurrentHashMap. Which one is efficient in performance wise.
 24)  Give me the real time example for abstract design pattern and factory pattern and which one is preferred .
 25)  What will happen system.exit given in finally block
-26)  What is the purpose of String pool. How its managed by JVM
+26)  What is the purpose of String pool. How it's managed by JVM
 27)  How to create immutable class.
 28)  When we should use the private constructor
 29)  What circular dependency exception. How to avoid circular dependency exception.  
@@ -206,9 +209,86 @@ Scenario based question:
  
 
  
-
+SPAM : 
 3. In HashMap if you create an object of same type how we can implement those in your code what is the procedure for that?
 5. what is filter and foreach  stream  methods are used?
 8. any logging framework you know.? how you are dealing with that ?
 9. Any junit and sonar experience? you have used please explain in details?
 10. Any cloud experience how you dealing with that explain?
+11. Following this, the interviewer grilled me on Java/JVM internals, garbage collection (GC), and the concept of immutable classes.
+12. String is immutable. Why?
+13. Explain what mean cohesion in programming
+14. Make list immutable, not singleton class
+15. What's the difference between clustered and non-clustered indexes?
+16. What is kafka lag? (I said that I know Kafka 😂)
+17. What is Richardson maturity model? (REST question)
+18. Discussion on the project.
+19. Had to write a piece of code for some API calls.
+20. Lots of questions on Java multithreading and exception handling.
+21. I had to also write an example for exception handling.
+    Total duration - 90 minutes
+22. Interviewer started with theoretical Questions based on Java
+
+
+Q. Internal working of @Transactional annotation in spring boot
+Q. Spring bean scope
+Q. Database Isolation levels
+Q. How does Red Black Tree work
+Q. REST API best practices
+Q. Disadvantages of Stream API
+Q. Questions based on Set and Map
+Q. So many others but I don't remember..
+Given a String array String[] str = ["This is spring boot @autowired", "I don't remember @correctly", "but it was like this only @qualifier annotation", "@autowired @qualifier"];
+Q.1 - Find all the unique words that starts with '@'. 
+I was asked to solve this using Java Streams. EPAM is extremely serious about streams :) .
+Output = [@autowired,@qualifier,@correctly];
+Q.2 - DSA Question - https://leetcode.com/problems/group-anagrams/description/
+
+1. Coding Round:
+Create a simple voting system for N candidates with unique IDs ranging from 0 to n-1. 
+Each voter casts 3 votes, with the first vote having 3x weight, 
+the second 2x, and the third 1x. For example, 
+if a voter votes for candidates A, B, and C, the votes for A, B, and C are incremented by 3, 2, and 1 respectively.
+2. Systems Design:
+Design a screen broadcast system where ads/videos can be played, replayed, changed, or scheduled for future broadcasts across multiple screens. It's a small-scale system.
+Microservice architecture patterns such as API Gateway, BFF, Circuit Breaker, Database per Service, Event-Driven, and Saga pattern.
+Richardson Maturity Model (RMM) and REST API grading.
+Differences between SOAP and REST.
+Hiring Manager Round:
+3. Started with a system design for a train ticket booking app. Focus was on high-level design, particularly Back-of-the-Envelope estimation and database design to efficiently find available trains and seats between a source and destination.
+12-factor principles of microservices.
+Asked about any design patterns I know or have worked on.
+Brief discussion on project locations and types.
+
+
+1. Java 11 new features , Java 8 new features
+2. Functional interfaces - ones introduced in Java 8
+3. Lambda functions : uses, examples
+4. How generics work under the hood
+5. Exception hierarchy in java
+6. Hashmap internal working
+7. HashSet vs HashMap
+8. Polymorphism in java : types and how they work
+9. Streams - uses
+10. Method overloading vs overriding
+11. Transaction management in Spring/Hibernate
+12. REST api - good practices
+    Given an array of strings, group the anagrams together Input: strs = ["eat","tea","tan","ate","nat","bat"] Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+    Given a string array of sentences use stream api to return distinct list of words that start with #
+    String[] sentences = {
+    "Here is a #sample sentence.",
+    "This is another #example of a sentence.",
+    "#Java streams are powerful.",
+    "Find words that start with #."
+    };
+    1. Introduce yourself : skills, tech-stack, projects
+    2. Features introduced in Java 8 , Use of Streams, functional interfaces
+    3. Stream related basic Java program
+    4. CAP theorem
+    5. SAGA pattern
+    6. Spring boot annotations : @Qualifier , @Primary
+    7. Normalization in DB: why to normalize, types of normalization
+    8. Design a Popularity counter class with methods,
+    9. incCounter(String uid);
+    10. decCounter(String uid);
+    11 getMostPopularContent();

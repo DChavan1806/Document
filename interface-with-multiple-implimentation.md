@@ -1,54 +1,58 @@
 
 1. Interface with Two Implementations
    - Suppose you have the following interface and two implementations:
-       `public interface PaymentService {
-            void processPayment();
-       }`
+                   
+           public interface PaymentService {
+                void processPayment();
+           }
 
-        `@Service("creditCardPaymentService")
-        public class CreditCardPaymentService implements PaymentService {
-            @Override
-            public void processPayment() {
-                System.out.println("Processing payment via Credit Card.");
+            @Service("creditCardPaymentService")
+            public class CreditCardPaymentService implements PaymentService {
+                @Override
+                public void processPayment() {
+                    System.out.println("Processing payment via Credit Card.");
+                }
             }
-        }`
 
-        `@Service("paypalPaymentService")
-        public class PayPalPaymentService implements PaymentService {
-            @Override
-            public void processPayment() {
-                System.out.println("Processing payment via PayPal.");
+            @Service("paypalPaymentService")
+            public class PayPalPaymentService implements PaymentService {
+                @Override
+                public void processPayment() {
+                    System.out.println("Processing payment via PayPal.");
+                }
             }
-        }`
+
 2. Injecting @Autowired with Multiple Implementations
    - If you try to autowire the PaymentService without specifying which implementation to inject, 
      Spring will not know which one to choose and will throw an error (NoUniqueBeanDefinitionException). 
    - to resolve this, you have a few options:
       1. Use @Qualifier to Specify Which Implementation
           - You can use the @Qualifier annotation to explicitly indicate which implementation should be injected. 
-          `@Service
-           public class PaymentProcessor {
-           private final PaymentService paymentService;
-               @Autowired
-               public PaymentProcessor(@Qualifier("creditCardPaymentService") PaymentService paymentService) {
-                 this.paymentService = paymentService;
-               }
-               public void process() {
-                 paymentService.processPayment();
-               }
-           }`
+         
+                  @Service
+                   public class PaymentProcessor {
+                   private final PaymentService paymentService;
+                       @Autowired
+                       public PaymentProcessor(@Qualifier("creditCardPaymentService") PaymentService paymentService) {
+                         this.paymentService = paymentService;
+                       }
+                       public void process() {
+                         paymentService.processPayment();
+                       }
+                   }
            - In this example, we are telling Spring to inject the CreditCardPaymentService by using @Qualifier("creditCardPaymentService").
  
       2. Use @Primary to Define a Default Implementation
            - You can annotate one of the implementations with `@Primary` to make it the default bean if no specific qualifier is provided.
-               `@Service
-               @Primary  // Marks this as the default implementation
-               public class CreditCardPaymentService implements PaymentService {
-                    @Override
-                    public void processPayment() {
-                        System.out.println("Processing payment via Credit Card.");
-                    }
-               }`
+         
+                   @Service
+                   @Primary  // Marks this as the default implementation
+                   public class CreditCardPaymentService implements PaymentService {
+                        @Override
+                        public void processPayment() {
+                            System.out.println("Processing payment via Credit Card.");
+                        }
+                   }
            - With this setup, if no @Qualifier is used, Spring will inject the CreditCardPaymentService by default.
 
       3. Use List or Map to Inject All Implementations
@@ -104,11 +108,11 @@
        This implementation is created dynamically by Spring, using proxy-based techniques, 
        which allows you to use the repository interface directly.
 
-      `import org.springframework.data.jpa.repository.JpaRepository;
-      public interface UserRepository extends JpaRepository<User, Long> {
-      // Custom query methods can be defined here
-        User findByUsername(String username);
-      }`
+            import org.springframework.data.jpa.repository.JpaRepository;
+            public interface UserRepository extends JpaRepository<User, Long> {
+            // Custom query methods can be defined here
+              User findByUsername(String username);
+            }
      - In this case, even though UserRepository is just an interface, 
      - spring will automatically create a proxy class that implements 
        it and inject that proxy wherever needed. You don't have to provide an implementation yourself.
@@ -116,10 +120,11 @@
   2. Spring allows @Repository on interfaces in this case because:
       - Dynamic Proxy Creation: Spring Data JPA uses dynamic proxies to create an implementation at runtime. The repository interfaces are just a contract that Spring can fulfill at runtime. 
       - Exception Translation: By using @Repository on these interfaces, Spring can automatically apply its exception translation mechanism, converting JPA-specific exceptions into Spring's data access exceptions (like DataAccessException).
-        `@Repository
-        public interface UserRepository extends JpaRepository<User, Long> {
-         User findByUsername(String username);
-        }`
+
+                        @Repository
+                        public interface UserRepository extends JpaRepository<User, Long> {
+                         User findByUsername(String username);
+                        }
    3. Why @Service Doesn't Work the Same Way on Interfaces
       - The @Service annotation is a Spring stereotype annotation, just like @Repository and @Component. 
       - However, @Service and @Component are typically applied to concrete classes and not interfaces,

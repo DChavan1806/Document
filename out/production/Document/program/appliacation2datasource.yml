@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    first:
+      url: jdbc:mysql://<IP_1>:<PORT>/first_db
+      username: first_user
+      password: first_password
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    second:
+      url: jdbc:mysql://<IP_2>:<PORT>/second_db
+      username: second_user
+      password: second_password
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+      postgresql:
+        url: jdbc:postgresql://<POSTGRESQL_IP>:<PORT>/postgres_db
+        username: postgres_user
+        password: postgres_password
+        driver-class-name: org.postgresql.Driver

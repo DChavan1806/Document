@@ -6,13 +6,17 @@
 1. public final Class<?> getClass()
      - Description: Returns the runtime class of the object.
      - Usage: Used to get metadata about the object's class, such as its name or its declared methods and fields.
-     `  Object obj = new String("Hello");
-       System.out.println(obj.getClass().getName());`
+       
+               Object obj = new String("Hello");
+               System.out.println(obj.getClass().getName()); 
+   
 2. public int hashCode()
     - Description: Returns a hash code value for the object. This is used in hashing-based collections like HashMap and HashSet. 
     - Usage: You can override this method in custom classes to provide meaningful hash codes.
-    - `Object obj = new Object();
-      System.out.println(obj.hashCode());`
+      
+          Object obj = new Object();
+          System.out.println(obj.hashCode());
+
 3. public boolean equals(Object obj)
     - Description: Compares this object with the specified object for equality. The default implementation checks if the references are the same, but it is often overridden.
     - Usage: Override this in your custom classes to compare objects by their content rather than just by reference.

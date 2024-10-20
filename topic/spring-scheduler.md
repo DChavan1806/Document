@@ -4,21 +4,21 @@
 
     1. Enable Scheduling
         - To use scheduling, you need to enable it in your Spring application. This can be done by adding `@EnableScheduling `to your configuration class.
-        - `import org.springframework.context.annotation.Configuration;
-          import org.springframework.scheduling.annotation.EnableScheduling;
-          @Configuration
-          @EnableScheduling
-          public class SchedulerConfig {
-          }`
+       
+              import org.springframework.context.annotation.Configuration;
+              import org.springframework.scheduling.annotation.EnableScheduling;
+              @Configuration
+              @EnableScheduling
+              public class SchedulerConfig {
+              }
     2. Creating a Scheduled Task
         - You can then create methods that you want to schedule by annotating them with @Scheduled. Here are a few scheduling options:
         - Fixed Rate: Runs the method at a fixed rate in milliseconds. 
         - Fixed Delay: Runs the method with a fixed delay between the end of the last execution and the start of the next. 
           - Cron Expressions: Allows for more complex scheduling using cron expressions.
 
-            `@Component
-            public class MyScheduledTask {
-        
+                @Component
+                public class MyScheduledTask {
                 // Runs every 5 seconds
                 @Scheduled(fixedRate = 5000)
                 public void scheduleFixedRateTask() {

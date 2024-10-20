@@ -1,5 +1,6 @@
 package topic;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +19,7 @@ public class StreamInOne {
 
         List<Integer> distinctNumber = Stream.of(integers)
                 .distinct()
-                .toList();
+                .collect(Collectors.toList());
         System.out.println("Distinct Number : " + distinctNumber);
 
         String sampleString = "geeksforgeeks";
@@ -28,6 +29,10 @@ public class StreamInOne {
                                 Collectors.counting()));
         System.out.println("Frequency Char :" + frequencyOfChar);
 
+        System.out.println(frequencyOfChar.entrySet().stream()
+                .filter(characterLongEntry ->  characterLongEntry.getValue() > 1)
+                .collect(Collectors.toList()));
+
         Map<Integer, Long> frequencyOfElement = Stream.of(integers)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println("Frequency of Element :" + frequencyOfElement);
@@ -35,7 +40,7 @@ public class StreamInOne {
         List<Integer> reverseOrder = Stream.of(integers)
                 .sorted(Comparator.reverseOrder())
                 .distinct()
-                .toList();
+                .collect(Collectors.toList());
         System.out.println("Reverse Order :" + reverseOrder);
 
         String StringWithDelPrePost = Stream.of("ABC", "XYZ")
@@ -52,6 +57,11 @@ public class StreamInOne {
 
         int max = Stream.of(integers).max(Comparator.naturalOrder()).orElse(0);
         System.out.println("Max : "+ max);
+
+        String s = "This is is name name";
+        Map<String, Long> freq = Arrays.stream(s.split("\\s+"))
+                .collect(Collectors.groupingBy(word -> word, Collectors.counting()));
+        System.out.println(freq);
 
     }
 }
