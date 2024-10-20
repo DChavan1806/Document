@@ -1,6 +1,7 @@
 What is microservice : 
 - A microservice is an architectural style that structures an application as a collection of loosely coupled services. 
 - Each service is designed to perform a specific business function and can be developed, deployed, and scaled independently. 
+- Microservices design pattern : [microservices-design-pattern.md](../microservices-design-pattern.md)
 - Here are some key characteristics of microservices:
      1. Independent Deployment: Each microservice can be deployed independently, allowing for more flexible and frequent releases without affecting the entire application.
      2. Decentralized Data Management: Microservices often manage their own database or data store, promoting data encapsulation and reducing dependencies between services.
@@ -11,7 +12,7 @@ What is microservice :
      7. DevOps and Continuous Delivery: Microservices are often associated with DevOps practices, enabling automated testing, continuous integration, and continuous delivery.
      8. Domain-Driven Design: Microservices often align with business capabilities or domains, making it easier to understand and develop them in terms of business needs.
 
--Microservices architecture is particularly useful for complex applications where rapid development, scalability, and maintainability are essential.
+- Microservices architecture is particularly useful for complex applications where rapid development, scalability, and maintainability are essential.
  However, it also introduces challenges such as managing distributed systems, ensuring data consistency, and handling inter-service communication.
 
 - Problem with Monolithic Architecture :
@@ -21,25 +22,16 @@ What is microservice :
   - overloaded web container 
   - Error Propagation will impact all Application
   - code maintenance and code readability 
-  - Testing 
-
-
+  - Testing
 - Pros of Microservices:
  1. Scalability: Individual services can be scaled independently, optimizing resource usage based on traffic. Helps handle varying loads for different components.
-
  2. Flexibility in Technology: Each microservice can use a different tech stack that best suits its requirements. You can leverage specialized tools and libraries for different services.
-
  3. Independent Development and Deployment: Teams can work on different microservices simultaneously without affecting others, leading to faster development.
     Services can be updated, deployed, and scaled independently without redeploying the whole application.
-
  4. Fault Isolation: Issues in one service don’t directly affect the others. This isolation improves the overall reliability and uptime of the system.
-
  5. Better Organization Around Business Capabilities: Services are aligned to business functions, making it easier to make changes that are scoped to business requirements.
-
  6. Continuous Delivery: You can deliver new features and updates more rapidly due to the modular nature of microservices, supporting continuous integration and delivery (CI/CD) pipelines.
-
  7. Resilience and Fault Tolerance: Microservices are often deployed with redundancy and can be designed for greater fault tolerance through techniques like circuit breaking, retries, and graceful degradation.
-
  8. Easy Maintenance and Updates: Small, focused services are easier to understand, maintain, and update over time compared to a monolithic application.
 
 - Cons of Microservices:
@@ -87,7 +79,6 @@ What is microservice :
            - Example: Every action in a banking application is stored as an event (e.g., deposit, withdraw), and other services can process these events to calculate balances or generate statements.
            - Pros: Complete history of changes, can replay events to recover lost state.
            - Cons: More complex to implement and manage event stores.
-
   4. Service Discovery:
      - Definition: In microservices architecture, services may dynamically change (e.g., scaling up or down), so they need a way to discover each other’s locations.
      - Common Tools: Consul, Eureka, Kubernetes, Zookeeper.

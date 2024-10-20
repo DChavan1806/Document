@@ -32,7 +32,8 @@
            BiFunction<T, U, R>: Takes two arguments and returns a result (T, U -> R) : BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
            BinaryOperator<T>  : Takes two arguments of the same type and returns a result of the same type (T, T -> T) : BinaryOperator<Integer> multiply = (a, b) -> a * b;
 
-3. Streams API
+3. Streams API: 
+   [stream-api.md](stream-api.md)
    Description: Provides a way to process sequences of elements (collections) in a functional style, supporting operations such as filter, map, and reduce.
 
        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
@@ -68,6 +69,7 @@
    
        LocalDate date = LocalDate.now();
        LocalDate nextWeek = date.plusWeeks(1);
+   - [New-Date-and-Time-API.md](New-Date-and-Time-API.md)
 
 8. Nashorn JavaScript Engine
    Description: A new lightweight JavaScript engine that allows for executing JavaScript code within Java applications, replacing the older Rhino engine.
@@ -84,10 +86,39 @@
        }).thenAccept(result -> System.out.println(result));
 
 10. Parallel Operations
-    Description: The Streams API supports parallel processing with the parallelStream() method, enabling easy parallelism for performance improvements.
+    - Description: The Streams API supports parallel processing with the parallelStream() method, enabling easy parallelism for performance improvements.
+    - Parallel operations in Java refer to the ability to execute multiple tasks concurrently, leveraging multicore processors to improve performance. 
+    - The Java 8 Streams API introduced built-in support for parallel processing, enabling parallel operations on collections, arrays, or other data sources. 
+    - This feature is particularly useful when you need to process large amounts of data and improve the throughput of applications.
     
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
-        names.parallelStream().forEach(System.out::println);
+           System.out.println("\nParallel Stream:");
+           numbers.parallelStream().forEach(num -> System.out.println(num + " - " + Thread.currentThread().getName()));
+            outbut: 
+            1 - ForkJoinPool.commonPool-worker-1
+            2 - ForkJoinPool.commonPool-worker-3
+            3 - ForkJoinPool.commonPool-worker-2
+    - Key Concepts
+      1. Sequential Stream: Processes elements one at a time, in a single thread.
+         `stream()`
+      2. Parallel Stream: Splits the stream into multiple parts, processes each part in a separate thread, and combines the results. It enables parallelism with minimal effort.
+         `parallelStream()`
+      3. Fork/Join Framework: Used internally by parallel streams for splitting and merging tasks. It is part of the java.util.concurrent package and allows for work-stealing algorithms to optimize thread usage.
+    - When to use Parallel Streams:
+      1. Large data sets: Parallel streams are efficient when working with large collections or arrays.
+      2. Multi-core processors: They leverage multiple cores to improve performance.
+      3. CPU-bound tasks: Best suited for CPU-intensive operations like mathematical computations, transformations, etc.
+    - When to avoid Parallel Streams:
+      1. Small data sets: The overhead of managing threads can outweigh the benefits for small collections.
+      2. I/O-bound tasks: Parallel streams may not significantly improve I/O-bound operations (e.g., network requests, file I/O).
+      3. Shared mutable state: Parallel streams can lead to thread-safety issues if working with shared mutable data.
+    - q1. How do you control the size of the ForkJoinPool used by parallel streams?
+    - Answer: By default, parallel streams use the common ForkJoinPool, which is determined by the number of available processors (usually Runtime.getRuntime().availableProcessors()). 
+       
+          You can set the size of the pool using the system property:
+          System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "8");
+11. file related changes : 
+     [java8withfile.md](java8withfile.md)
+
 
 - Summary
     Java 8 brought substantial improvements to the Java programming language, 

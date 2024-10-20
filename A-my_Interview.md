@@ -39,7 +39,7 @@
 14. How default with same name in differ interface work when concrete class implement both interface
 15. Differance between runnable and callable
 16. What purpose methode reference in java8 
-17. Java 8 complete 
+17. Java 8 complete
      [java8.md](java8.md)
      [DefaultMethod.java](program/DefaultMethod.java)
 18. WORKING OF PRAORITY QUEUE
