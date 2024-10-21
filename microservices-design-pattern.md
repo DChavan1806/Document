@@ -16,6 +16,7 @@
      2. Event Sourcing: Capture changes to an application's state as a series of events. Microservices can rebuild their state from these events rather than storing the current state.
   5. Resilience Patterns
      - Circuit Breaker: Prevent a microservice from repeatedly calling another service that is likely to fail. After a threshold is reached, further calls are blocked for a period.
+     - [circuit-breaker-pattern.md](../../Interview/circuit-breaker-pattern.md)
      - Retry: Automatically retry a failed operation, often combined with exponential backoff.
      - Bulkhead: Isolate resources for different microservices or operations to avoid failure in one part from impacting others.
   6. Discovery Patterns

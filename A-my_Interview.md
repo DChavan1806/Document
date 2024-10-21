@@ -42,4 +42,17 @@
 17. Java 8 complete
      [java8.md](java8.md)
      [DefaultMethod.java](program/DefaultMethod.java)
-18. WORKING OF PRAORITY QUEUE
+18. WORKING OF PRIORITY QUEUE
+    - it does not flow the fifo rule as normal queue, it arranges the element based on their priorities 
+    - priority queue can store comparable object to arrange them in correct priority or comparator
+    - for int , char , float jvm auto-box  to wrapper class which already hava comparable implemented 
+
+          PriorityQueue<Task> taskQueue = new PriorityQueue<>(new Comparator<Task>() {
+               @Override
+               public int compare(Task t1, Task t2) {
+               return Integer.compare(t1.priority, t2.priority);
+            }
+          });
+    - add , remove and pool() - > to remove 1st element as per priority 
+    - max heap and min heap tech to add and remove data
+19. Kafka : [kafka.md](kafka.md)
