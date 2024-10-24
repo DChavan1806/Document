@@ -2,7 +2,7 @@
     1. HashMap internal 
        - use array as bucket(HashTable) and Linked list(key/value/hash/next) as to insert element of same hash value
        - initial capacity 16(0to15)
-       - if element increase more than 8 element in linked list convert to black-white(self balance tree)
+       - if element increase more than 8 element in linked list convert to Red-Black (self balance tree)
        - hash(k) - index = hash & (n-1)
        - default balance factor : 0.75 , 8 element O(n) -> log(n), 6 element to un-treefied 
        - two hashing mechanism used hashing plus key comparison for balance tree

@@ -27,3 +27,11 @@
      - [spring-scheduler.md](spring-scheduler.md)
 16. design pattern: 
      - https://github.com/DChavan1806/design-pattern
+17. spring security :  
+     - [spring-security.md](spring-security.md)
+18. Rest api : 
+    - [RestFul-api.md](RestFul-api.md)
+19. Exception handling 
+20. Multithreading : 
+     - [multithreading.md](../multithreading.md)
+     - [syncronizations.md](../syncronizations.md)

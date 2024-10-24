@@ -1,4 +1,10 @@
+- ACID : [acid.md](acid.md)
+- Database Normalization : 
+    - [database-normalization.md](database-normalization.md)
+    - https://chatgpt.com/share/6719082d-45e8-8002-a990-ac79ac9ef227
 
+- JOIN : [join-sql.md](join-sql.md)
+- UNION : [union-operation.md](union-operation.md)
 
         WITH LowSalaries AS (
         SELECT department_id, MIN(salary) As low_salary
@@ -33,6 +39,49 @@
         emp.manager_id IS NOT NULL
     GROUP BY
         e.name;
+
+
+        CREATE TABLE Employee_details(  
+        Emp_Id NUMBER(4) NOT NULL,  
+        First_name VARCHAR(30),  
+        Last_name VARCHAR(30),  
+        Salary Money,  
+        City VARCHAR(30),  
+        PRIMARY KEY (Emp_Id)  
+        );
+        
+        ALTER TABLE Employee_details   
+        ADD Designation VARCHAR(18);  
+
+        ALTER TABLE table_name DROP COLUMN column_name;  
+
+        ALTER TABLE table_name MODIFY column_name column_datatype[(size)];  
+      
+        DROP TABLE Employee_details;   
+
+        CREATE DATABASE Company;  
+
+        INSERT INTO Employee_details 
+          ( Emp_ID, First_name, Last_name, Salary,City)  
+        VALUES
+         (101,Akhil,Sharma,40000,Bangalore),
+         (102,Sagar,Sharma,40000,Bangalore);  
+
+
+          TRUNCATE TABLE Employee_details; - delete all record from table
+           DESCRIBE Employee_details; 
+                
+                CREATE INDEX idx_First_Name  
+                ON employee_details (First_Name);
+
+    LEFT JOIN  union all -> :
+    PlSQL -> function and trigger:
+    how increase performance of queue:
+    1 box and small boxes -> 5 child 
+    Normalization ->
+    ACID ->
+
+
 
 
     

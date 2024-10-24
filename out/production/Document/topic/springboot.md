@@ -25,15 +25,16 @@
     - The framework provides sensible defaults, autoconfigures necessary components, 
       and requires very little manual configuration to get an application up and running.
     - A Spring Boot application requires a minimal structure, often consisting of:
-        ├── src
-        │   ├── main
-        │   │   ├── java
-        │   │   │   └── com.example.demo
-        │   │   │       └── DemoApplication.java
-        │   │   ├── resources
-        │   │   │   └── application.properties
-        │   └── test
-        │       ├── java
+        
+            ├── src
+            │   ├── main
+            │   │   ├── java
+            │   │   │   └── com.example.demo
+            │   │   │       └── DemoApplication.java
+            │   │   ├── resources
+            │   │   │   └── application.properties
+            │   └── test
+            │       ├── java
 - Minimal build.gradle for Gradle
    [build.gradle](../../../../build.gradle)
 

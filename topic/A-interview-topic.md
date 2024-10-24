@@ -20,34 +20,34 @@
    - https://github.com/DChavan1806/com.rest.api
 
 
-One coding problem on DSA 2. One coding problem which was needed to be done using java 8 System design and technical questions: 1. How db is distributed in microservice 2. Caching and logging 3. Retry mechanism in spring boot 4. Scaling in Microservice, which scenario which scaling is required. 5. Api gateway, circuit breaker 6. Data processing in kafka, consumer and producer
+- One coding problem on DSA 2. One coding problem which was needed to be done using java 8 System design and technical questions: 1. How db is distributed in microservice 2. Caching and logging 3. Retry mechanism in spring boot 4. Scaling in Microservice, which scenario which scaling is required. 5. Api gateway, circuit breaker 6. Data processing in kafka, consumer and producer
 
 
-5. What is the use of default keyword and how we can use that in real time. Why cant we use Abstract class instead of interface with default method.
-6. OOPS
-7. What is Abstraction and real time example
-8. How to implement singleton class in java
-9. Explain the flow of Spring MVC
-10. How Spring Boot Project works
-11. Spring Security
-12. Junit
-13. Collection API
-14. How Hashmap works internally
-15. How Hashset works internally
-16. What is difference between hashmap and hashset in java
-17. Database frameworks
-18. Multithreading
-19. Difference between wait and sleep
-20. From which class we are calling wait  method
-21. SQL
-22. Difference between Stored Procedure and Function
-23)     Hashmap two values with same key
-24)     How equals method works
-25)     what is hash collision
-26)     design patterns used
-27)     scenario for electricity bill for domestic and farmers design pattern can be used
-28)     JUnit which pattern is used
-23)  Difference between HashMap and ConcurrentHashMap. Which one is efficient in performance wise.
+1. What is the use of default keyword and how we can use that in real time. Why cant we use Abstract class instead of interface with default method.
+2. OOPS
+3. What is Abstraction and real time example
+4. How to implement singleton class in java
+5. Explain the flow of Spring MVC
+6. How Spring Boot Project works
+7. Spring Security
+8. Junit
+9. Collection API
+10. How Hashmap works internally
+11. How Hashset works internally
+12. What is difference between hashmap and hashset in java
+13. Database frameworks
+14. Multithreading
+15. Difference between wait and sleep
+16. From which class we are calling wait  method
+17. SQL
+18. Difference between Stored Procedure and Function
+23.    Hashmap two values with same key
+24.    How equals method works
+25.    what is hash collision
+26.    design patterns used
+27.    scenario for electricity bill for domestic and farmers design pattern can be used
+28.    JUnit which pattern is used
+29. Difference between HashMap and ConcurrentHashMap. Which one is efficient in performance wise.
 24)  Give me the real time example for abstract design pattern and factory pattern and which one is preferred .
 25)  What will happen system.exit given in finally block
 26)  What is the purpose of String pool. How it's managed by JVM

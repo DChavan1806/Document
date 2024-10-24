@@ -56,3 +56,7 @@
       - **Java Native Interface**
            - Java Native Interface (JNI) is a framework which provides an interface to communicate with another application written in another language like C, C++, Assembly etc. 
            - Java uses JNI framework to send output to the Console or interact with OS libraries.
+
+- What is the purpose of String pool. How it's managed by JVM
+  - String pool - spring intern -> special memory area in heap -> store string literal 
+  - Str = "abc" -> string pool, new String("abc") -> heap. new String("abc").intern() -> spring pool

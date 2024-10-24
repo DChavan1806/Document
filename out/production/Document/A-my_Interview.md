@@ -36,8 +36,23 @@
      [jvm-working.md](jvm-working.md)
 13. Implement jvm custom class loader : 
     [CustomClassLoader.java](program/CustomClassLoader.java)
-14. how default with same name in differ interface work when concrete class implement both interface
-    [DefaultMethod.java](program/DefaultMethod.java)
-15. what purpose methode reference in java8 
-16. java 8 complete 
+14. How default with same name in differ interface work when concrete class implement both interface
+15. Differance between runnable and callable
+16. What purpose methode reference in java8 
+17. Java 8 complete
      [java8.md](java8.md)
+     [DefaultMethod.java](program/DefaultMethod.java)
+18. WORKING OF PRIORITY QUEUE
+    - it does not flow the fifo rule as normal queue, it arranges the element based on their priorities 
+    - priority queue can store comparable object to arrange them in correct priority or comparator
+    - for int , char , float jvm auto-box  to wrapper class which already hava comparable implemented 
+
+          PriorityQueue<Task> taskQueue = new PriorityQueue<>(new Comparator<Task>() {
+               @Override
+               public int compare(Task t1, Task t2) {
+               return Integer.compare(t1.priority, t2.priority);
+            }
+          });
+    - add , remove and pool() - > to remove 1st element as per priority 
+    - max heap and min heap tech to add and remove data
+19. Kafka : [kafka.md](kafka.md)
