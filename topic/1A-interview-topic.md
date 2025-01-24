@@ -1,10 +1,5 @@
 1. Introduction : 
-   - My name is Dnyaneshwar Chavan , I am from Nashik, Maharastra 
-   - I have over 7 year exprience in software development, mainly worked on backed technology 
-     like java, spring and spring boot framwork, hiberante and database mysql and elastic search
-   - I started my carrer with manhattan associate as java developer and worked on the legacy project warehouse mangement. help client to implement there 3pl setup for FedEx, nile, dhl.
-   - covert same minolothic wm project to microservice using spring boot, kakfa as messageing broked and restfull service, use ELK for log monitoring 
-   - join blume on feb 2022, startup compony,  worked on the logistic module and elastic sync service.
+   
 
 2. About Previous Project
    - mbe(master business entity) - library or jar 
