@@ -6,10 +6,18 @@
   and various other enterprise-level concerns.
 
 - Key Features of Spring:
-    1. Dependency Injection (DI): Promotes loose coupling through Inversion of Control (IoC),
-       allowing objects to be injected rather than hardcoded.
+    1. Dependency Injection (DI): Dependency Injection (DI) is a design pattern used in software development to implement Inversion of Control (IoC).
+       - allow object to be injected rather than hardcoding 
+       - Type:
+          1. Constructor Injection : Dependencies are provided through a class constructor.
+          2. Setter Injection : Dependencies are injected using public setter methods.
+          3. Field Injection : Dependencies are directly injected into the fields using annotations (e.g., @Autowired in Spring).
+       - Advantages of Dependency Injection
+          1. Loose Coupling: Components are loosely coupled, making the system easier to maintain and extend.
+          2. Testability: Dependencies can be mocked or stubbed for unit testing.
+          3. Code Reusability: Services can be reused across different modules.
     2. Aspect-Oriented Programming (AOP):
-       Helps in modularizing cross-cutting concerns like logging, security, and transaction management.
+       - Helps in modularizing cross-cutting concerns like logging, security, and transaction management.
     3. Data Access: Simplifies working with databases using the Spring JDBC module and ORM integrations (Hibernate, JPA).
     4. Transaction Management: Offers declarative transaction management for various resources.
     5. MVC Framework: Provides a web application framework for building web applications.

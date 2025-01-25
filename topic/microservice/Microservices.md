@@ -98,4 +98,5 @@ What is microservice :
   1. Synchronous (REST/gRPC) is best for simple, immediate request-response needs, but can cause high latency or bottlenecks if a dependent service fails or is slow.
   2. Asynchronous (Message Queues/Event Streams) allows for loose coupling, better resilience, and is preferred when services do not require an immediate response.
   3. Event-Driven architectures are ideal when multiple services need to act on certain state changes or events but do not need immediate acknowledgment.
-  - Each method of communication has trade-offs in terms of latency, reliability, complexity, and scalability, so the choice depends on the specific requirements of your microservice architecture.    
+  - Each method of communication has trade-offs in terms of latency, reliability, complexity, and scalability, so the choice depends on the specific requirements of your microservice architecture. 
+
